@@ -1,15 +1,15 @@
 {
-    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:295328764097:task-definition/aurapan-cloud:1",
+    "taskDefinitionArn": "arn:aws:ecs:ap-southeast-2:295328764097:task-definition/aurapan-cloud-2:1",
     "containerDefinitions": [
         {
-            "name": "aurapan",
+            "name": "aurapan-cloud",
             "image": "295328764097.dkr.ecr.ap-southeast-2.amazonaws.com/aurapan-cloud",
             "cpu": 0,
             "portMappings": [
                 {
-                    "name": "aurapan-80-tcp",
+                    "name": "aurapan-cloud-80-tcp",
                     "containerPort": 80,
-                    "hostPort": 80,
+                    "hostPort": 0,
                     "protocol": "tcp",
                     "appProtocol": "http"
                 }
@@ -18,69 +18,41 @@
             "environment": [],
             "environmentFiles": [],
             "mountPoints": [],
-            "volumesFrom": [],
-            "logConfiguration": {
-                "logDriver": "awslogs",
-                "options": {
-                    "awslogs-create-group": "true",
-                    "awslogs-group": "/ecs/aurapan-cloud",
-                    "awslogs-region": "ap-southeast-2",
-                    "awslogs-stream-prefix": "ecs"
-                }
-            }
+            "volumesFrom": []
         }
     ],
-    "family": "aurapan-cloud",
+    "family": "aurapan-cloud-2",
     "taskRoleArn": "arn:aws:iam::295328764097:role/ecsTaskExecutionRole",
     "executionRoleArn": "arn:aws:iam::295328764097:role/ecsTaskExecutionRole",
-    "networkMode": "awsvpc",
+    "networkMode": "bridge",
     "revision": 1,
     "volumes": [],
     "status": "ACTIVE",
     "requiresAttributes": [
         {
-            "name": "com.amazonaws.ecs.capability.logging-driver.awslogs"
-        },
-        {
-            "name": "ecs.capability.execution-role-awslogs"
-        },
-        {
             "name": "com.amazonaws.ecs.capability.ecr-auth"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
         },
         {
             "name": "com.amazonaws.ecs.capability.task-iam-role"
         },
         {
             "name": "ecs.capability.execution-role-ecr-pull"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.18"
-        },
-        {
-            "name": "ecs.capability.task-eni"
-        },
-        {
-            "name": "com.amazonaws.ecs.capability.docker-remote-api.1.29"
         }
     ],
     "placementConstraints": [],
     "compatibilities": [
-        "EC2",
-        "FARGATE"
+        "EC2"
     ],
     "requiresCompatibilities": [
-        "FARGATE"
+        "EC2"
     ],
     "cpu": "1024",
-    "memory": "3072",
+    "memory": "1024",
     "runtimePlatform": {
         "cpuArchitecture": "X86_64",
         "operatingSystemFamily": "LINUX"
     },
-    "registeredAt": "2023-03-23T17:50:46.430Z",
+    "registeredAt": "2023-03-23T19:46:46.948Z",
     "registeredBy": "arn:aws:iam::295328764097:user/noah",
     "tags": []
 }

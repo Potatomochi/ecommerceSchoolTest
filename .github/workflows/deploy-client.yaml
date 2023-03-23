@@ -29,17 +29,15 @@ name: Deploy to Amazon ECS
 on:
   push:
     branches: [ "main" ]
-    paths:
-      - "client/**"
  
 env:
   AWS_REGION: ap-southeast-2                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: aurapan-cloud       # set this to your Amazon ECR repository name
   ECS_SERVICE: aurapan-cloud             # set this to your Amazon ECS service name
-  ECS_CLUSTER: AuraPanCluster              # set this to your Amazon ECS cluster name
-  ECS_TASK_DEFINITION: .github/workflows/aurapan-cloud-revision1.json # set this to the path to your Amazon ECS task definition
+  ECS_CLUSTER: AuraPanCluster2              # set this to your Amazon ECS cluster name
+  ECS_TASK_DEFINITION: .github/workflows/aurapan-cloud-2-revision1.json # set this to the path to your Amazon ECS task definition
                                                # file, e.g. .aws/task-definition.json
-  CONTAINER_NAME: aurapan           # set this to the name of the container in the
+  CONTAINER_NAME: aurapan-cloud           # set this to the name of the container in the
                                                # containerDefinitions section of your task definition
 
 permissions:

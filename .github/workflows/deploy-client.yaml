@@ -32,7 +32,7 @@ on:
     paths:
       - "client/**"
       - "trigger-deploy.txt"
-
+ 
 env:
   AWS_REGION: ap-southeast-2                   # set this to your preferred AWS region, e.g. us-west-1
   ECR_REPOSITORY: aurapan-cloud       # set this to your Amazon ECR repository name
